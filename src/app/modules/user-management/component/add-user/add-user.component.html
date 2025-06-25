@@ -1,8 +1,11 @@
-<h2 mat-dialog-title>{{title}}</h2>
+<h2 mat-dialog-title>{{ title }}</h2>
 <mat-dialog-content [formGroup]="userForm">
   <mat-form-field appearance="fill" class="full-width">
     <mat-label>First Name</mat-label>
     <input matInput formControlName="first_name" />
+    <mat-error *ngIf="userForm.get('first_name')?.hasError('required')"
+      >First name is required.</mat-error
+    >
   </mat-form-field>
 
   <mat-form-field appearance="fill" class="full-width">
@@ -11,14 +14,45 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill" class="full-width">
+    <mat-select
+      class="selectWidth"
+      placeholder="Role* "
+      formControlName="role"
+    >
+      <mat-option value="admin">Admin</mat-option>
+      <mat-option value="project-manager">Project Manager</mat-option>
+      <mat-option value="developer">Developer</mat-option>
+    </mat-select>
+    <mat-error *ngIf="userForm.get('role')?.hasError('required')"
+      >Role is required.</mat-error
+    >
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
     <mat-label>Email</mat-label>
     <input matInput type="email" formControlName="email" />
+    <mat-error *ngIf="userForm.get('email')?.hasError('required')"
+      >Email is required.</mat-error
+    >
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password" />
+    <mat-error *ngIf="userForm.get('password')?.hasError('required')"
+      >Password is required.</mat-error
+    >
   </mat-form-field>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
   <button mat-button (click)="close()">Cancel</button>
-  <button mat-raised-button color="primary" (click)="save()" [disabled]="userForm.invalid">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="save()"
+    [disabled]="userForm.invalid"
+  >
     Save
   </button>
 </mat-dialog-actions>

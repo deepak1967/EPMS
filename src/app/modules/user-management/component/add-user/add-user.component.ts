@@ -21,8 +21,10 @@ export class AddUserComponent {
   ) {
     this.userForm = this.fb.group({
       first_name: ['', Validators.required],
-      last_name: ['', Validators.required],
+      last_name: [''],
+      role: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required,]]
     });
   }
 

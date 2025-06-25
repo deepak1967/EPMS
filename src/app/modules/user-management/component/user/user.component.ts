@@ -11,7 +11,7 @@ import { AddUserComponent } from '../add-user/add-user.component';
 })
 export class UserComponent {
   users: any = [];
-  displayedColumns: string[] = ['image', 'id', 'name', 'email', 'actions'];
+  displayedColumns: string[] = ['image', 'id', 'name', 'email', 'role', 'actions'];
 
 
   constructor(
@@ -34,7 +34,7 @@ export class UserComponent {
 
   addUser(): void {
     const dialogRef = this.dialog.open(AddUserComponent, {
-      width: '400px',
+      width: '600px',
       data: { mode: 'add' }
     });
 
@@ -45,7 +45,7 @@ export class UserComponent {
 
   editUser(user: any) {
     const ref = this.dialog.open(AddUserComponent, {
-      width: '400px',
+      width: '600px',
       data: { mode: 'edit', user }
     });
     ref.afterClosed();
