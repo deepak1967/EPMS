@@ -47,7 +47,7 @@
       <button mat-button [matMenuTriggerFor]="menu">Hi Admin</button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>Hi, Admin</button>
-        <button mat-menu-item>Logout</button>
+        <button mat-menu-item (click)="logout()">Logout</button>
       </mat-menu>
     </mat-toolbar>
 

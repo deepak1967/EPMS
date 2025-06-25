@@ -16,28 +16,6 @@ export class DashboardComponent {
   users: any = {}
   tasks: any = {}
 
-
-  // KPI data
-  kpiData: any = {
-    projects: {
-      total: 24,
-      ongoing: 12,
-      completed: 8,
-      onHold: 4,
-    },
-    users: {
-      total: 200,
-      active: 150,
-      inactive: 50,
-    },
-    tasks: {
-      total: 32,
-      overdue_1_3: 4,
-      overdue_4_7: 3,
-      overdue_7_plus: 1,
-    },
-  };
-
   ngOnInit(): void {
     this.getKpiData();
   }

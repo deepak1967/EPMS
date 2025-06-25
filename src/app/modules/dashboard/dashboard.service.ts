@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment.prod';
 export class DashboardService {
 
 
-  private baseUrl = environment.jsonUrl; // Adjust if needed
+  private baseUrl = environment.jsonUrl;
 
   constructor(private http: HttpClient) {}
 

@@ -31,9 +31,4 @@ export class LoginComponent {
     }
   }
 
-
-  // "email": "eve.holt@reqres.in"
-  // "password": "cityslicka"
-
-
 }
