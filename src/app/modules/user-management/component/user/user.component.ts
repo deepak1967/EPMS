@@ -3,6 +3,7 @@ import { UserService } from '../../service/user.service';
 import { SharedService } from 'src/app/shared/shared.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddUserComponent } from '../add-user/add-user.component';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-user',
@@ -12,6 +13,12 @@ import { AddUserComponent } from '../add-user/add-user.component';
 export class UserComponent {
   users: any = [];
   displayedColumns: string[] = ['image', 'id', 'name', 'email', 'role', 'actions'];
+  filteredUsers: any[] = [];
+  pagedUsers: any[] = [];
+  page: any = 1;
+  limit: any = 20;
+  totalItems: any
+
 
 
   constructor(
@@ -27,8 +34,16 @@ export class UserComponent {
   }
 
   getUsers() {
-    this.userService.getUsers().subscribe((res: any) => {
-      this.users = res?.data;
+    const data = {
+      limit: this.limit || 20,
+      page: this.page || 1,
+    }
+    this.userService.getUsers(data).subscribe((res: any) => {
+      this.users = res?.data ?? [];
+      this.totalItems = res?.data?.length;
+      this.filteredUsers = [...this.users];
+      this.page = 0;
+      this.paginate()
     })
   }
 
@@ -58,5 +73,25 @@ export class UserComponent {
       this.getUsers();
     })
   }
+
+  onFilterChanged(filtered: any[]): void {
+    this.filteredUsers = filtered;
+    this.totalItems = filtered.length;
+    this.page = 0;
+    this.paginate();
+  }
+
+  onPageChange(event: PageEvent) {
+    this.page = event.pageIndex;
+    this.limit = event.pageSize;
+    this.paginate();
+  }
+
+  paginate() {
+    const start = this.page * this.limit;
+    const end = start + this.limit;
+    this.pagedUsers = this.filteredUsers.slice(start, end);
+  }
+
 
 }

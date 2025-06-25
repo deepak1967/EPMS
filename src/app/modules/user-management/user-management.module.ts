@@ -11,10 +11,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { UserComponent } from './component/user/user.component';
 import { AddUserComponent } from './component/add-user/add-user.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -34,6 +35,8 @@ import { AddUserComponent } from './component/add-user/add-user.component';
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
+    FormsModule,
+    SharedModule
   ]
 })
 export class UserManagementModule { }

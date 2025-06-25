@@ -12,8 +12,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<any> {
-    return this.http.get<any>(this.baseUrl + `users`);
+  getUsers(data:any): Observable<any> {
+    return this.http.get<any>(this.baseUrl + `users?page=${data.page}&limit=${data.limit}`);
   }
 
   createUser(user: any) {
