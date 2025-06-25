@@ -1,0 +1,58 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [mode]="isHandset ? 'over' : 'side'"
+    [opened]="!isHandset"
+  >
+    <mat-nav-list class="main-nav">
+      <div class="logo-wrapper">
+        <img
+          class="logo"
+          src="./../../../../../assets/epms.png"
+          alt="Logo"
+        />
+      </div>
+      <a mat-list-item routerLink="/dashboard">
+        <span class="menu-text">Dashboard</span>
+      </a>
+      <a mat-list-item routerLink="/project">
+        <span class="menu-text">Project Management</span>
+      </a>
+      <a mat-list-item routerLink="/task">
+        <span class="menu-text">Task Management</span>
+      </a>
+      <a mat-list-item routerLink="/user">
+        <span class="menu-text">User Management</span>
+      </a>
+       <a mat-list-item routerLink="/notification">
+        <span class="menu-text">Notification</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-elevation-z4">
+      <button
+        type="button"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset"
+        aria-label="Toggle sidenav"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="toolbar-title"> Dashboard</span>
+      <span class="spacer"></span>
+      <button mat-button [matMenuTriggerFor]="menu">Hi Admin</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Hi, Admin</button>
+        <button mat-menu-item>Logout</button>
+      </mat-menu>
+    </mat-toolbar>
+
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

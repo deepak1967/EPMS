@@ -1,0 +1,133 @@
+/* Layout Containers */
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 240px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+  width: 120px;
+  object-fit: contain;
+}
+
+/* Toolbar */
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.toolbar-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Navigation Menu Items */
+.main-nav a {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.main-nav a:hover {
+  background-color: #f1f1f1;
+}
+
+.menu-text {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+/* Content Area */
+.main-content {
+  padding: 16px;
+  background-color: #f4f6f8;
+  min-height: calc(100vh - 64px); /* Assuming toolbar is 64px */
+}
+
+/* Profile Menu */
+.profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profilePicImageSize {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .daykart-logo {
+    width: 140px;
+  }
+
+  .toolbar-title {
+    font-size: 18px;
+  }
+
+  .main-content {
+    padding: 12px;
+  }
+
+  .menu-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .daykart-logo {
+    width: 120px;
+  }
+
+  .toolbar-title {
+    font-size: 16px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar-title {
+    font-size: 15px;
+  }
+
+  .menu-text {
+    display: none; /* Optional: hide text on very small screens */
+  }
+
+  .main-content {
+    padding: 8px;
+  }
+}
