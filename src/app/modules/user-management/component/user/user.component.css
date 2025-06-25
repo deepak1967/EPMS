@@ -1,0 +1,82 @@
+.table-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+.table-actions button mat-icon {
+  margin-right: 4px;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin: 16px;
+}
+
+table {
+  width: 100%;
+  min-width: 600px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+mat-icon {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+button {
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  table {
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  th,
+  td {
+    padding: 8px 12px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  th,
+  td {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  mat-icon {
+    font-size: 18px;
+  }
+
+  button {
+    margin-right: 4px;
+  }
+}

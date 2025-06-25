@@ -7,11 +7,7 @@
   >
     <mat-nav-list class="main-nav">
       <div class="logo-wrapper">
-        <img
-          class="logo"
-          src="./../../../../../assets/epms.png"
-          alt="Logo"
-        />
+        <img class="logo" src="./../../../../../assets/epms.png" alt="Logo" />
       </div>
       <a mat-list-item routerLink="/dashboard">
         <span class="menu-text">Dashboard</span>
@@ -25,7 +21,7 @@
       <a mat-list-item routerLink="/user">
         <span class="menu-text">User Management</span>
       </a>
-       <a mat-list-item routerLink="/notification">
+      <a mat-list-item routerLink="/notification">
         <span class="menu-text">Notification</span>
       </a>
     </mat-nav-list>
@@ -42,7 +38,7 @@
       >
         <mat-icon>menu</mat-icon>
       </button>
-      <span class="toolbar-title"> Dashboard</span>
+      <span class="toolbar-title"> {{ headerTitle }}</span>
       <span class="spacer"></span>
       <button mat-button [matMenuTriggerFor]="menu">Hi Admin</button>
       <mat-menu #menu="matMenu">

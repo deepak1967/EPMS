@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Chart, ChartConfiguration, ChartItem, registerables } from 'chart.js';
 import { DashboardService } from '../../dashboard.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +9,7 @@ import { DashboardService } from '../../dashboard.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
-  constructor(private dashboardService: DashboardService) {
+  constructor(private dashboardService: DashboardService, private sharedService: SharedService) {
     Chart.register(...registerables);
   }
 
@@ -17,6 +18,7 @@ export class DashboardComponent {
   tasks: any = {}
 
   ngOnInit(): void {
+    this.sharedService.setTitle('Dashboard')
     this.getKpiData();
   }
 
