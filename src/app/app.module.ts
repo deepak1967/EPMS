@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InterceptorService } from './modules/authentication/service/interceptor.service';
+import { SharedModule } from "./shared/shared.module";
 
 
 @NgModule({
@@ -16,8 +17,9 @@ import { InterceptorService } from './modules/authentication/service/interceptor
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    SharedModule
+],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
   ],
