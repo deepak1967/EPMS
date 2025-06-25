@@ -1,1 +1,47 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+
+  <!-- KPI Cards -->
+  <div class="kpi-cards">
+    <mat-card class="kpi-card">
+      <mat-icon>assignment</mat-icon>
+      <div class="kpi-details">
+        <h3>Projects</h3>
+        <p>{{projects.total }}</p>
+      </div>
+    </mat-card>
+
+    <mat-card class="kpi-card">
+      <mat-icon>people</mat-icon>
+      <div class="kpi-details">
+        <h3>Active Users</h3>
+        <p>{{ users.active }}</p>
+      </div>
+    </mat-card>
+
+    <mat-card class="kpi-card">
+      <mat-icon>schedule</mat-icon>
+      <div class="kpi-details">
+        <h3>Overdue Tasks</h3>
+        <p>{{ tasks.overdue_1_3 + tasks.overdue_4_7 + tasks.overdue_7_plus }}</p>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- Charts Section -->
+  <div class="kpi-chart-container">
+    <div class="chart-box">
+      <h4>Project Breakdown</h4>
+      <canvas id="ProjectChart" width="400" height="200"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h4>User Activity</h4>
+      <canvas id="UserChart" width="400" height="200"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h4>Overdue Task Range</h4>
+      <canvas id="OverdueChart" width="400" height="200"></canvas>
+    </div>
+  </div>
+</div>
