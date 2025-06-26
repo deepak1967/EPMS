@@ -22,7 +22,7 @@ export class ProjectService {
   updateProjects(project: any) {
     console.log(project);
     
-    return this.http.put(this.baseUrl +`${project.id}`, project);   // or PATCH
+    return this.http.put(this.baseUrl +`projects/${project.id}`, project);   // or PATCH
   }
 
 

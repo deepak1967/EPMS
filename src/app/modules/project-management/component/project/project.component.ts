@@ -3,6 +3,8 @@ import { SharedService } from 'src/app/shared/shared.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { ProjectService } from '../../service/project.service';
+import { Router } from '@angular/router';
+import { AddProjectComponent } from '../add-project/add-project.component';
 
 @Component({
   selector: 'app-project',
@@ -46,12 +48,25 @@ export class ProjectComponent {
   }
 
   addProject(): void {
-  
+    const dialogRef = this.dialog.open(AddProjectComponent, {
+      width: '600px',
+      data: { mode: 'add' }
+    });
+
+    dialogRef.afterClosed();
+    this.getProjects();
+
   }
 
-  editProject(project: any) {
-
+  editProject(user: any) {
+    const ref = this.dialog.open(AddProjectComponent, {
+      width: '600px',
+      data: { mode: 'edit', user }
+    });
+    ref.afterClosed();
+    this.getProjects();
   }
+
 
   detailProject(project: any) {
 
