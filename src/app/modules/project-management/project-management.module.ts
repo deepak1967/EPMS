@@ -12,6 +12,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatChipsModule } from '@angular/material/chips';
+
 
 
 
@@ -20,12 +22,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 import { ProjectComponent } from './component/project/project.component';
 import { AddProjectComponent } from './component/add-project/add-project.component';
+import { ProjectDetailComponent } from './component/project-detail/project-detail.component';
 
 
 @NgModule({
   declarations: [
     ProjectComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    ProjectDetailComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +46,8 @@ import { AddProjectComponent } from './component/add-project/add-project.compone
     FormsModule,
     SharedModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatChipsModule
   ]
 })
 export class ProjectManagementModule { }

@@ -1,0 +1,42 @@
+.project-detail-card {
+  max-width: 960px;
+  margin: 16px auto;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.status-chip {
+  font-weight: bold;
+}
+
+
+.project-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.project-info-grid .full-row {
+  grid-column: 1 / -1;
+}
+
+.task-placeholder {
+  max-width: 960px;
+  margin: 32px auto;
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  padding: 20px;
+  border-top: 1px dashed #ccc;
+}

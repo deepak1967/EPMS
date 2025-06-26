@@ -25,6 +25,7 @@ export class ProjectComponent {
     private projectService: ProjectService,
     private sharedService: SharedService,
     private dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -69,7 +70,7 @@ export class ProjectComponent {
 
 
   detailProject(project: any) {
-
+    this.router.navigate([`project/detail/${project?.id}`])
   }
 
   deleteProject(project: any) {

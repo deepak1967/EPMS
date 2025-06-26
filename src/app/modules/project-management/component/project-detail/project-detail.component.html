@@ -1,0 +1,23 @@
+<mat-card class="project-detail-card">
+  <mat-card-header>
+    <div class="header-content">
+      <span class="project-title">{{ project.name }}</span>
+      <mat-chip class="status-chip" selected>
+        {{ project.status }}
+      </mat-chip>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="project-info-grid">
+      <div><strong>Project ID:</strong> {{ project.id }}</div>
+      <div><strong>Start Date:</strong> {{ project.startDate | date }}</div>
+      <div><strong>End Date:</strong> {{ project.endDate | date }}</div>
+      <p class="full-row">
+        <strong>Assigned Users:</strong>
+        <span *ngFor="let uid of project.assignedUsers; let last = last">
+          {{ uid }}<span *ngIf="!last">, </span>
+        </span>
+      </p>
+    </div>
+  </mat-card-content>
+</mat-card>

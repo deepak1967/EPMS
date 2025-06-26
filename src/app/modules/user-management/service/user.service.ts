@@ -17,13 +17,12 @@ export class UserService {
   }
 
   createUser(user: any) {
-    return this.http.post(this.baseUrl + `users`, user);
+    return this.http.get(this.baseUrl + `users`, user);
   }
 
   updateUser(user: any) {
     console.log(user);
-    
-    return this.http.put(this.baseUrl +`${user.id}`, user);   // or PATCH
+    return this.http.put(this.baseUrl +`users/${user.id}`, user);   // or PATCH
   }
 
 
