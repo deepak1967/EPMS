@@ -10,6 +10,7 @@ const routes: Routes = [
     children: [
       { path: "", loadChildren: () => import("./../modules/dashboard/dashboard.module").then(m => m.DashboardModule) },
       { path: "user", loadChildren: () => import("./../modules/user-management/user-management.module").then(m => m.UserManagementModule) },
+      { path: "project", loadChildren: () => import("./../modules/project-management/project-management.module").then(m => m.ProjectManagementModule) },
     ],
   },
 

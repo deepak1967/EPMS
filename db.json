@@ -113,5 +113,116 @@
                 "avatar": "https://reqres.in/img/faces/10-image.jpg"
             }
         ]
+    },
+    "projects": {
+        "data": [
+            {
+                "id": 1,
+                "name": "Website Redesign",
+                "status": "Ongoing",
+                "startDate": "2025-05-01",
+                "endDate": "2025-07-30",
+                "assignedUsers": [
+                    101,
+                    102
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Mobile App Development",
+                "status": "Completed",
+                "startDate": "2024-11-15",
+                "endDate": "2025-03-10",
+                "assignedUsers": [
+                    103,
+                    104
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Marketing Campaign",
+                "status": "On Hold",
+                "startDate": "2025-01-10",
+                "endDate": "2025-06-15",
+                "assignedUsers": [
+                    105
+                ]
+            },
+            {
+                "id": 4,
+                "name": "CRM Integration",
+                "status": "Ongoing",
+                "startDate": "2025-04-05",
+                "endDate": "2025-08-01",
+                "assignedUsers": [
+                    106,
+                    107
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Security Audit",
+                "status": "Completed",
+                "startDate": "2024-12-01",
+                "endDate": "2025-01-15",
+                "assignedUsers": [
+                    108
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Cloud Migration",
+                "status": "Ongoing",
+                "startDate": "2025-03-12",
+                "endDate": "2025-09-20",
+                "assignedUsers": [
+                    109,
+                    110
+                ]
+            },
+            {
+                "id": 7,
+                "name": "Performance Tuning",
+                "status": "On Hold",
+                "startDate": "2025-02-20",
+                "endDate": "2025-05-10",
+                "assignedUsers": [
+                    102,
+                    105
+                ]
+            },
+            {
+                "id": 8,
+                "name": "SEO Optimization",
+                "status": "Completed",
+                "startDate": "2024-10-01",
+                "endDate": "2025-01-31",
+                "assignedUsers": [
+                    101
+                ]
+            },
+            {
+                "id": 9,
+                "name": "New Feature Rollout",
+                "status": "Ongoing",
+                "startDate": "2025-06-01",
+                "endDate": "2025-08-15",
+                "assignedUsers": [
+                    104,
+                    107
+                ]
+            },
+            {
+                "id": 10,
+                "name": "Database Migration",
+                "status": "Completed",
+                "startDate": "2025-01-05",
+                "endDate": "2025-03-25",
+                "assignedUsers": [
+                    108,
+                    109
+                ]
+            }
+        ]
     }
 }
