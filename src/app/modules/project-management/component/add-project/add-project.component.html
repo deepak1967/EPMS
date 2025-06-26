@@ -18,9 +18,9 @@
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Status</mat-label>
       <mat-select formControlName="status">
-        <mat-option value="Ongoing">On Going</mat-option>
-        <mat-option value="On Hold">On Hold</mat-option>
-        <mat-option value="Completed">Complete</mat-option>
+        <mat-option value="on-going">On Going</mat-option>
+        <mat-option value="on-hold">On Hold</mat-option>
+        <mat-option value="completed">Complete</mat-option>
       </mat-select>
       <mat-error *ngIf="userForm.get('status')?.hasError('required')">
         Status is required.

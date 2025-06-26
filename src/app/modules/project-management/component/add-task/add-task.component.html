@@ -1,0 +1,68 @@
+<h2 mat-dialog-title>{{ title }}</h2>
+<mat-dialog-content [formGroup]="taskForm">
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Task Title</mat-label>
+    <input matInput formControlName="title" />
+    <mat-error *ngIf="taskForm.get('title')?.hasError('required')"
+      >Title is required.</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-select
+      class="selectWidth"
+      placeholder="Priority* "
+      formControlName="priority"
+    >
+    <mat-option value="low">Low</mat-option>
+    <mat-option value="medium">Medium</mat-option>
+    <mat-option value="high">High</mat-option>
+    </mat-select>
+    <mat-error *ngIf="taskForm.get('priority')?.hasError('required')"
+      >Priority is required.</mat-error
+    >
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-select
+      class="selectWidth"
+      placeholder="Status* "
+      formControlName="status"
+    >
+      <mat-option value="pending">Pending</mat-option>
+      <mat-option value="in-progress">In Progress</mat-option>
+      <mat-option value="completed">Completed</mat-option>
+    </mat-select>
+    <mat-error *ngIf="taskForm.get('status')?.hasError('required')"
+      >Status is required.</mat-error
+    >
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Due Date</mat-label>
+      <input
+        matInput
+        placeholder="MM/DD/YYYY"
+        [matDatepicker]="startPicker"
+        formControlName="dueDate"
+      />
+      <mat-datepicker-toggle matSuffix [for]="startPicker">
+        <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #startPicker></mat-datepicker>
+      <mat-error *ngIf="taskForm.get('dueDate')?.hasError('required')">
+        Due date is required.
+      </mat-error>
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Cancel</button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="save()"
+    [disabled]="taskForm.invalid"
+  >
+    Save
+  </button>
+</mat-dialog-actions>
