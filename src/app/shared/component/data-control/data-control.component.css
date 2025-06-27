@@ -1,4 +1,44 @@
 .filter-section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.filter-left {
+  flex: 1 1 25%;
+}
+
+.filter-input {
+  width: 100%;
+}
+
+.filter-right {
+  flex: 1 1 66.66%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 6rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-left,
+  .filter-right {
+    flex: 1 1 100%;
+  }
+
+  .filter-right {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
 }

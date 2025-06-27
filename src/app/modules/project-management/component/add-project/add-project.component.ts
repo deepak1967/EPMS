@@ -86,7 +86,6 @@ export class AddProjectComponent {
 
   addIds(event: Event): void {
     const input = (event.target as HTMLTextAreaElement).value;
-    // Split, trim, and store your IDs array however you need
     this.parsedIds = input.split(',')
       .map(id => id.trim())
       .filter(id => id !== '');

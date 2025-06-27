@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,13 +16,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 
-
-
-
 import { HeaderComponent } from './component/header/header.component';
 import { StartComponent } from './component/start/start.component';
 import { DataControlComponent } from './component/data-control/data-control.component';
-import { FormsModule } from '@angular/forms';
 import { ToasterComponent } from './component/toaster/toaster.component';
 
 

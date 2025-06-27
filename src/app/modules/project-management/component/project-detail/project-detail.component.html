@@ -14,7 +14,7 @@
       <div><strong>Start Date:</strong> {{ project.startDate | date }}</div>
       <div><strong>End Date:</strong> {{ project.endDate | date }}</div>
       <p class="full-row">
-        <strong>Assigned Users:</strong>
+        <strong>Assigned Users Id:</strong>
         <span *ngFor="let uid of project.assignedUsers; let last = last">
           {{ uid }}<span *ngIf="!last">, </span>
         </span>

@@ -1,37 +1,33 @@
-<div class="filter-section">
-  <mat-form-field appearance="fill" class="w-100">
-    <mat-label>Filter</mat-label>
-    <input
-      matInput
-      placeholder="Type to filter..."
-      (keyup)="applyFilter($event)"
-    />
-  </mat-form-field>
+<div class="filter-section mat-elevation-z2">
+  <!-- Left 1/3: Filter input -->
+  <div class="filter-left">
+    <mat-form-field appearance="fill" class="filter-input">
+      <mat-label>Filter</mat-label>
+      <input
+        matInput
+        placeholder="Type to filter..."
+        (keyup)="applyFilter($event)"
+      />
+    </mat-form-field>
+  </div>
 
-  <mat-form-field appearance="fill" *ngIf="IsShowSorting">
-    <mat-label>Sort By</mat-label>
-    <mat-select
-      (selectionChange)="applySort($event.value.field, $event.value.dir)"
-    >
-      <mat-option [value]="{ field: 'priority', dir: 'asc' }"
-        >Priority: Low → High</mat-option
-      >
-      <mat-option [value]="{ field: 'priority', dir: 'desc' }"
-        >Priority: High → Low</mat-option
-      >
-      <mat-option [value]="{ field: 'dueDate', dir: 'asc' }"
-        >Date: Old → New</mat-option
-      >
-      <mat-option [value]="{ field: 'dueDate', dir: 'desc' }"
-        >Date: New → Old</mat-option
-      >
-    </mat-select>
-  </mat-form-field>
+  <!-- Right 2/3: Sort + Paginator -->
+  <div class="filter-right">
+    <mat-form-field appearance="fill" *ngIf="IsShowSorting" class="sort-select">
+      <mat-label>Sort By</mat-label>
+      <mat-select (selectionChange)="applySort($event.value.field, $event.value.dir)">
+        <mat-option [value]="{ field: 'priority', dir: 'asc' }">Priority: Low → High</mat-option>
+        <mat-option [value]="{ field: 'priority', dir: 'desc' }">Priority: High → Low</mat-option>
+        <mat-option [value]="{ field: 'dueDate', dir: 'asc' }">Date: Old → New</mat-option>
+        <mat-option [value]="{ field: 'dueDate', dir: 'desc' }">Date: New → Old</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <mat-paginator
-    [length]="totalItems"
-    [pageSize]="pageSize"
-    [pageSizeOptions]="[5, 10, 25, 100]"
-    (page)="onPageChange($event)"
-  ></mat-paginator>
+    <mat-paginator
+      [length]="totalItems"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      (page)="onPageChange($event)">
+    </mat-paginator>
+  </div>
 </div>
