@@ -1,655 +1,651 @@
 {
-    "dashboardData": {
-        "kpiData": {
-            "projects": {
-                "total": 24,
-                "ongoing": 12,
-                "completed": 8,
-                "onHold": 4
-            },
-            "users": {
-                "total": 200,
-                "active": 150,
-                "inactive": 50
-            },
-            "tasks": {
-                "total": 32,
-                "overdue_1_3": 4,
-                "overdue_4_7": 3,
-                "overdue_7_plus": 1
-            }
-        }
-    },
-    "users": {
-        "data": [
-            {
-                "id": 1,
-                "email": "michael.lawson@reqres.in",
-                "first_name": "Michael",
-                "last_name": "Lawson",
-                "role": "admin",
-                "password": "michael",
-                "avatar": "https://reqres.in/img/faces/1-image.jpg"
-            },
-            {
-                "id": 2,
-                "email": "lindsay.ferguson@reqres.in",
-                "first_name": "Lindsay",
-                "last_name": "Ferguson",
-                "role": "project-manager",
-                "password": "lindsay",
-                "avatar": "https://reqres.in/img/faces/2-image.jpg"
-            },
-            {
-                "id": 3,
-                "email": "tobias.funke@reqres.in",
-                "first_name": "Tobias",
-                "last_name": "Funke",
-                "role": "developer",
-                "password": "tobias",
-                "avatar": "https://reqres.in/img/faces/3-image.jpg"
-            },
-            {
-                "id": 4,
-                "email": "byron.fields@reqres.in",
-                "first_name": "Byron",
-                "last_name": "Fields",
-                "role": "admin",
-                "password": "byron",
-                "avatar": "https://reqres.in/img/faces/4-image.jpg"
-            },
-            {
-                "id": 5,
-                "email": "george.edwards@reqres.in",
-                "first_name": "George",
-                "last_name": "Edwards",
-                "role": "developer",
-                "password": "george",
-                "avatar": "https://reqres.in/img/faces/5-image.jpg"
-            },
-            {
-                "id": 6,
-                "email": "rachel.howell@reqres.in",
-                "first_name": "Rachel",
-                "last_name": "Howell",
-                "role": "project-manager",
-                "password": "rachel",
-                "avatar": "https://reqres.in/img/faces/6-image.jpg"
-            },
-            {
-                "id": 7,
-                "email": "emma.watson@reqres.in",
-                "first_name": "Emma",
-                "last_name": "Watson",
-                "role": "developer",
-                "password": "emma",
-                "avatar": "https://reqres.in/img/faces/7-image.jpg"
-            },
-            {
-                "id": 8,
-                "email": "harry.potter@reqres.in",
-                "first_name": "Harry",
-                "last_name": "Potter",
-                "role": "admin",
-                "password": "harry",
-                "avatar": "https://reqres.in/img/faces/8-image.jpg"
-            },
-            {
-                "id": 9,
-                "email": "ron.weasley@reqres.in",
-                "first_name": "Ron",
-                "last_name": "Weasley",
-                "role": "developer",
-                "password": "ron",
-                "avatar": "https://reqres.in/img/faces/9-image.jpg"
-            },
-            {
-                "id": 10,
-                "email": "hermione.granger@reqres.in",
-                "first_name": "Hermione",
-                "last_name": "Granger",
-                "role": "project-manager",
-                "password": "hermione",
-                "avatar": "https://reqres.in/img/faces/10-image.jpg"
-            }
-        ]
-    },
-    "projects": {
-        "data": [
-            {
-                "id": 1,
-                "name": "Website Redesign",
-                "status": "on-going",
-                "startDate": "2025-05-01",
-                "endDate": "2025-07-30",
-                "assignedUsers": [
-                    101,
-                    102
-                ],
-                "tasks": [
-                    {
-                        "id": 1,
-                        "title": "Create wireframes",
-                        "status": "completed",
-                        "dueDate": "2025-05-10",
-                        "priority": "low",
-                        "description": "Low-fidelity wireframes for all key pages"
-                    },
-                    {
-                        "id": 2,
-                        "title": "Design medium-fidelity mock-ups",
-                        "status": "in-progress",
-                        "dueDate": "2025-06-05",
-                        "priority": "medium",
-                        "description": "UI kit and final screen designs"
-                    },
-                    {
-                        "id": 3,
-                        "title": "Front-end implementation",
-                        "status": "pending",
-                        "dueDate": "2025-06-25",
-                        "priority": "low",
-                        "description": "Responsive layout with Angular Material"
-                    },
-                    {
-                        "id": 4,
-                        "title": "Content migration",
-                        "status": "pending",
-                        "dueDate": "2025-07-05",
-                        "priority": "high",
-                        "description": "Move existing CMS content to new structure"
-                    },
-                    {
-                        "id": 5,
-                        "title": "Cross-browser testing",
-                        "status": "pending",
-                        "dueDate": "2025-07-20",
-                        "priority": "medium",
-                        "description": "Ensure compatibility on major browsers/devices"
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "name": "Mobile App Development",
-                "status": "on-going",
-                "startDate": "2025-04-15",
-                "endDate": "2025-10-31",
-                "assignedUsers": [
-                    105,
-                    106,
-                    107
-                ],
-                "tasks": [
-                    {
-                        "id": 1,
-                        "title": "Define app architecture",
-                        "status": "completed",
-                        "dueDate": "2025-05-01",
-                        "priority": "low",
-                        "description": "Clean architecture with feature modules"
-                    },
-                    {
-                        "id": 2,
-                        "title": "Implement authentication",
-                        "status": "in-progress",
-                        "dueDate": "2025-06-15",
-                        "priority": "medium",
-                        "description": "OAuth2 with social logins"
-                    },
-                    {
-                        "id": 3,
-                        "title": "Develop chat module",
-                        "status": "pending",
-                        "dueDate": "2025-07-30",
-                        "priority": "high",
-                        "description": "Socket.IO real-time messaging"
-                    },
-                    {
-                        "id": 4,
-                        "title": "Offline data sync",
-                        "status": "pending",
-                        "dueDate": "2025-08-20",
-                        "priority": "high",
-                        "description": "IndexedDB storage and background sync"
-                    },
-                    {
-                        "id": 5,
-                        "title": "App store deployment",
-                        "status": "pending",
-                        "dueDate": "2025-10-20",
-                        "priority": "medium",
-                        "description": "Prepare assets and CI/CD pipeline"
-                    }
-                ]
-            },
-            {
-                "id": 3,
-                "name": "Marketing Campaign",
-                "status": "on-hold",
-                "startDate": "2025-03-01",
-                "endDate": "2025-08-15",
-                "assignedUsers": [
-                    108,
-                    109
-                ],
-                "tasks": [
-                    {
-                        "id": 1,
-                        "title": "Audience research",
-                        "status": "completed",
-                        "dueDate": "2025-03-20",
-                        "priority": "low",
-                        "description": "Persona workshops and surveys"
-                    },
-                    {
-                        "id": 2,
-                        "title": "Creative concept",
-                        "status": "completed",
-                        "dueDate": "2025-04-05",
-                        "priority": "medium",
-                        "description": "Campaign slogan and visuals"
-                    },
-                    {
-                        "id": 3,
-                        "title": "Ad asset production",
-                        "status": "on-hold",
-                        "dueDate": "2025-05-25",
-                        "priority": "high",
-                        "description": "Video and banner design"
-                    },
-                    {
-                        "id": 4,
-                        "title": "Influencer outreach",
-                        "status": "on-hold",
-                        "dueDate": "2025-06-15",
-                        "priority": "medium",
-                        "description": "Negotiate sponsorship deals"
-                    },
-                    {
-                        "id": 5,
-                        "title": "Campaign launch",
-                        "status": "on-hold",
-                        "dueDate": "2025-08-01",
-                        "priority": "low",
-                        "description": "Cross-channel rollout"
-                    }
-                ]
-            },
-            {
-                "id": 4,
-                "name": "Inventory System Upgrade",
-                "status": "completed",
-                "startDate": "2024-11-01",
-                "endDate": "2025-01-31",
-                "assignedUsers": [
-                    110,
-                    111
-                ],
-                "tasks": [
-                    {
-                        "id": 1,
-                        "title": "Database migration",
-                        "status": "completed",
-                        "dueDate": "2024-12-05",
-                        "priority": "high",
-                        "description": "MySQL to PostgreSQL"
-                    },
-                    {
-                        "id": 2,
-                        "title": "API refactor",
-                        "status": "completed",
-                        "dueDate": "2024-12-20",
-                        "priority": "high",
-                        "description": "RESTful endpoints redesign"
-                    },
-                    {
-                        "id": 3,
-                        "title": "Barcode scanning module",
-                        "status": "completed",
-                        "dueDate": "2025-01-10",
-                        "priority": "medium",
-                        "description": "Zebra SDK integration"
-                    },
-                    {
-                        "id": 4,
-                        "title": "User training",
-                        "status": "completed",
-                        "dueDate": "2025-01-20",
-                        "priority": "low",
-                        "description": "Workshops & documentation"
-                    },
-                    {
-                        "id": 5,
-                        "title": "System go-live",
-                        "status": "completed",
-                        "dueDate": "2025-01-31",
-                        "priority": "medium",
-                        "description": "Cut-over and support"
-                    }
-                ]
-            },
-            {
-                "id": 5,
-                "name": "Cloud Migration",
-                "status": "on-going",
-                "startDate": "2025-02-10",
-                "endDate": "2025-09-30",
-                "assignedUsers": [
-                    112,
-                    113,
-                    114
-                ],
-                "tasks": [
-                    {
-                        "id": 1,
-                        "title": "Assess current infrastructure",
-                        "status": "completed",
-                        "dueDate": "2025-03-01",
-                        "priority": "high",
-                        "description": "Inventory and dependency mapping"
-                    },
-                    {
-                        "id": 2,
-                        "title": "Select cloud provider",
-                        "status": "completed",
-                        "dueDate": "2025-03-20",
-                        "priority": "medium",
-                        "description": "AWS vs Azure evaluation"
-                    },
-                    {
-                        "id": 3,
-                        "title": "Set up landing zone",
-                        "status": "in-progress",
-                        "dueDate": "2025-05-30",
-                        "priority": "low",
-                        "description": "Networking and IAM policies"
-                    },
-                    {
-                        "id": 4,
-                        "title": "Migrate databases",
-                        "status": "pending",
-                        "dueDate": "2025-07-15",
-                        "priority": "high",
-                        "description": "DMS setup and replication"
-                    },
-                    {
-                        "id": 5,
-                        "title": "Decommission on-prem servers",
-                        "status": "pending",
-                        "dueDate": "2025-09-10",
-                        "priority": "high",
-                        "description": "Physical shutdown and disposal"
-                    }
-                ]
-            },
-            {
-                "id": 6,
-                "name": "E-commerce Platform Enhancement",
-                "status": "on-going",
-                "startDate": "2025-03-05",
-                "endDate": "2025-12-15",
-                "assignedUsers": [
-                    115,
-                    116
-                ],
-                "tasks": [
-                    {
-                        "id": 1,
-                        "title": "Integrate payment gateway v2",
-                        "status": "completed",
-                        "dueDate": "2025-03-25",
-                        "priority": "medium",
-                        "description": "Support UPI and BNPL"
-                    },
-                    {
-                        "id": 2,
-                        "title": "Implement recommendation engine",
-                        "status": "in-progress",
-                        "dueDate": "2025-06-20",
-                        "priority": "low",
-                        "description": "Collaborative filtering model"
-                    },
-                    {
-                        "id": 3,
-                        "title": "Improve page load times",
-                        "status": "pending",
-                        "dueDate": "2025-08-05",
-                        "priority": "medium",
-                        "description": "Lazy loading and CDN setup"
-                    },
-                    {
-                        "id": 4,
-                        "title": "Add loyalty program",
-                        "status": "pending",
-                        "dueDate": "2025-10-01",
-                        "priority": "high",
-                        "description": "Points and tier logic"
-                    },
-                    {
-                        "id": 5,
-                        "title": "Holiday sale readiness",
-                        "status": "pending",
-                        "dueDate": "2025-11-20",
-                        "priority": "medium",
-                        "description": "Scale infrastructure and promo codes"
-                    }
-                ]
-            },
-            {
-                "id": 7,
-                "name": "Customer Support Chatbot",
-                "status": "on-going",
-                "startDate": "2025-05-10",
-                "endDate": "2025-09-30",
-                "assignedUsers": [
-                    117,
-                    118
-                ],
-                "tasks": [
-                    {
-                        "id": 1,
-                        "title": "Define intents and entities",
-                        "status": "completed",
-                        "dueDate": "2025-05-25",
-                        "priority": "low",
-                        "description": "Top 50 support queries"
-                    },
-                    {
-                        "id": 2,
-                        "title": "Train NLP model",
-                        "status": "in-progress",
-                        "dueDate": "2025-06-30",
-                        "priority": "high",
-                        "description": "Rasa NLU pipeline"
-                    },
-                    {
-                        "id": 3,
-                        "title": "Integrate with CRM",
-                        "status": "pending",
-                        "dueDate": "2025-07-25",
-                        "priority": "medium",
-                        "description": "Real-time ticket creation"
-                    },
-                    {
-                        "id": 4,
-                        "title": "Pilot with beta users",
-                        "status": "pending",
-                        "dueDate": "2025-08-20",
-                        "priority": "medium",
-                        "description": "Collect feedback and metrics"
-                    },
-                    {
-                        "id": 5,
-                        "title": "Full production rollout",
-                        "status": "pending",
-                        "dueDate": "2025-09-30",
-                        "priority": "low",
-                        "description": "24/7 coverage and monitoring"
-                    }
-                ]
-            },
-            {
-                "id": 8,
-                "name": "Data Warehouse Implementation",
-                "status": "on-going",
-                "startDate": "2025-01-20",
-                "endDate": "2025-08-31",
-                "assignedUsers": [
-                    119,
-                    120,
-                    121
-                ],
-                "tasks": [
-                    {
-                        "id": 1,
-                        "title": "Design star schema",
-                        "status": "completed",
-                        "dueDate": "2025-02-15",
-                        "priority": "high",
-                        "description": "Fact and dimension tables"
-                    },
-                    {
-                        "id": 2,
-                        "title": "Set up ETL pipeline",
-                        "status": "completed",
-                        "dueDate": "2025-03-30",
-                        "priority": "high",
-                        "description": "Airflow DAGs for nightly loads"
-                    },
-                    {
-                        "id": 3,
-                        "title": "Build data marts",
-                        "status": "in-progress",
-                        "dueDate": "2025-05-30",
-                        "priority": "medium",
-                        "description": "Sales, marketing, finance"
-                    },
-                    {
-                        "id": 4,
-                        "title": "Implement BI dashboards",
-                        "status": "pending",
-                        "dueDate": "2025-07-15",
-                        "priority": "low",
-                        "description": "Looker & Power BI"
-                    },
-                    {
-                        "id": 5,
-                        "title": "User training & handover",
-                        "status": "pending",
-                        "dueDate": "2025-08-25",
-                        "priority": "medium",
-                        "description": "Workshops and best practices"
-                    }
-                ]
-            },
-            {
-                "id": 9,
-                "name": "Cybersecurity Audit",
-                "status": "completed",
-                "startDate": "2024-12-01",
-                "endDate": "2025-03-15",
-                "assignedUsers": [
-                    122,
-                    123
-                ],
-                "tasks": [
-                    {
-                        "id": 1,
-                        "title": "Vulnerability assessment",
-                        "status": "completed",
-                        "dueDate": "2025-01-05",
-                        "priority": "high",
-                        "description": "Nessus and OWASP Top 10"
-                    },
-                    {
-                        "id": 2,
-                        "title": "Penetration testing",
-                        "status": "completed",
-                        "dueDate": "2025-02-01",
-                        "priority": "low",
-                        "description": "External and internal"
-                    },
-                    {
-                        "id": 3,
-                        "title": "Policy review",
-                        "status": "completed",
-                        "dueDate": "2025-02-20",
-                        "priority": "medium",
-                        "description": "Update security policies"
-                    },
-                    {
-                        "id": 4,
-                        "title": "Remediation plan",
-                        "status": "completed",
-                        "dueDate": "2025-03-05",
-                        "priority": "high",
-                        "description": "Patch critical findings"
-                    },
-                    {
-                        "id": 5,
-                        "title": "Final audit report",
-                        "status": "completed",
-                        "dueDate": "2025-03-15",
-                        "priority": "high",
-                        "description": "Executive summary and next steps"
-                    }
-                ]
-            },
-            {
-                "id": 10,
-                "name": "AI Recommendation Engine",
-                "status": "on-going",
-                "startDate": "2025-04-01",
-                "endDate": "2025-12-31",
-                "assignedUsers": [
-                    124,
-                    125,
-                    126
-                ],
-                "tasks": [
-                    {
-                        "id": 1,
-                        "title": "Collect historical user data",
-                        "status": "completed",
-                        "dueDate": "2025-04-30",
-                        "priority": "low",
-                        "description": "Purchase and browsing history"
-                    },
-                    {
-                        "id": 2,
-                        "title": "Build baseline model",
-                        "status": "in-progress",
-                        "dueDate": "2025-06-20",
-                        "priority": "medium",
-                        "description": "Matrix factorization"
-                    },
-                    {
-                        "id": 3,
-                        "title": "A/B test model variants",
-                        "status": "pending",
-                        "dueDate": "2025-08-15",
-                        "priority": "high",
-                        "description": "CTR and conversion metrics"
-                    },
-                    {
-                        "id": 4,
-                        "title": "Real-time inference API",
-                        "status": "pending",
-                        "dueDate": "2025-10-01",
-                        "priority": "high",
-                        "description": "gRPC service on Kubernetes"
-                    },
-                    {
-                        "id": 5,
-                        "title": "Personalization dashboard",
-                        "status": "pending",
-                        "dueDate": "2025-12-15",
-                        "priority": "low",
-                        "description": "Admin control and analytics"
-                    }
-                ]
-            }
-        ]
+  "dashboardData": {
+    "kpiData": {
+      "projects": {
+        "total": 24,
+        "ongoing": 12,
+        "completed": 8,
+        "onHold": 4
+      },
+      "users": {
+        "total": 200,
+        "active": 150,
+        "inactive": 50
+      },
+      "tasks": {
+        "total": 32,
+        "overdue_1_3": 4,
+        "overdue_4_7": 3,
+        "overdue_7_plus": 1
+      }
     }
+  },
+  "users": [
+    {
+      "id": 1,
+      "email": "michael.lawson@reqres.in",
+      "first_name": "Michael",
+      "last_name": "Lawson",
+      "role": "admin",
+      "password": "michael",
+      "avatar": "https://reqres.in/img/faces/1-image.jpg"
+    },
+    {
+      "id": 2,
+      "email": "lindsay.ferguson@reqres.in",
+      "first_name": "Lindsay",
+      "last_name": "Ferguson",
+      "role": "project-manager",
+      "password": "lindsay",
+      "avatar": "https://reqres.in/img/faces/2-image.jpg"
+    },
+    {
+      "id": 3,
+      "email": "tobias.funke@reqres.in",
+      "first_name": "Tobias",
+      "last_name": "Funke",
+      "role": "developer",
+      "password": "tobias",
+      "avatar": "https://reqres.in/img/faces/3-image.jpg"
+    },
+    {
+      "id": 4,
+      "email": "byron.fields@reqres.in",
+      "first_name": "Byron",
+      "last_name": "Fields",
+      "role": "admin",
+      "password": "byron",
+      "avatar": "https://reqres.in/img/faces/4-image.jpg"
+    },
+    {
+      "id": 5,
+      "email": "george.edwards@reqres.in",
+      "first_name": "George",
+      "last_name": "Edwards",
+      "role": "developer",
+      "password": "george",
+      "avatar": "https://reqres.in/img/faces/5-image.jpg"
+    },
+    {
+      "id": 6,
+      "email": "rachel.howell@reqres.in",
+      "first_name": "Rachel",
+      "last_name": "Howell",
+      "role": "project-manager",
+      "password": "rachel",
+      "avatar": "https://reqres.in/img/faces/6-image.jpg"
+    },
+    {
+      "id": 7,
+      "email": "emma.watson@reqres.in",
+      "first_name": "Emma",
+      "last_name": "Watson",
+      "role": "developer",
+      "password": "emma",
+      "avatar": "https://reqres.in/img/faces/7-image.jpg"
+    },
+    {
+      "id": 8,
+      "email": "harry.potter@reqres.in",
+      "first_name": "Harry",
+      "last_name": "Potter",
+      "role": "admin",
+      "password": "harry",
+      "avatar": "https://reqres.in/img/faces/8-image.jpg"
+    },
+    {
+      "id": 9,
+      "email": "ron.weasley@reqres.in",
+      "first_name": "Ron",
+      "last_name": "Weasley",
+      "role": "developer",
+      "password": "ron",
+      "avatar": "https://reqres.in/img/faces/9-image.jpg"
+    },
+    {
+      "id": 10,
+      "email": "hermione.granger@reqres.in",
+      "first_name": "Hermione",
+      "last_name": "Granger",
+      "role": "project-manager",
+      "password": "hermione",
+      "avatar": "https://reqres.in/img/faces/10-image.jpg"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Website Redesign",
+      "status": "on-going",
+      "startDate": "2025-05-01",
+      "endDate": "2025-07-30",
+      "assignedUsers": [
+        101,
+        102
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Create wireframes",
+          "status": "completed",
+          "dueDate": "2025-05-10",
+          "priority": "low",
+          "description": "Low-fidelity wireframes for all key pages"
+        },
+        {
+          "id": 2,
+          "title": "Design medium-fidelity mock-ups",
+          "status": "in-progress",
+          "dueDate": "2025-06-05",
+          "priority": "medium",
+          "description": "UI kit and final screen designs"
+        },
+        {
+          "id": 3,
+          "title": "Front-end implementation",
+          "status": "pending",
+          "dueDate": "2025-06-25",
+          "priority": "low",
+          "description": "Responsive layout with Angular Material"
+        },
+        {
+          "id": 4,
+          "title": "Content migration",
+          "status": "pending",
+          "dueDate": "2025-07-05",
+          "priority": "high",
+          "description": "Move existing CMS content to new structure"
+        },
+        {
+          "id": 5,
+          "title": "Cross-browser testing",
+          "status": "pending",
+          "dueDate": "2025-07-20",
+          "priority": "medium",
+          "description": "Ensure compatibility on major browsers/devices"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mobile App Development",
+      "status": "on-going",
+      "startDate": "2025-04-15",
+      "endDate": "2025-10-31",
+      "assignedUsers": [
+        105,
+        106,
+        107
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Define app architecture",
+          "status": "completed",
+          "dueDate": "2025-05-01",
+          "priority": "low",
+          "description": "Clean architecture with feature modules"
+        },
+        {
+          "id": 2,
+          "title": "Implement authentication",
+          "status": "in-progress",
+          "dueDate": "2025-06-15",
+          "priority": "medium",
+          "description": "OAuth2 with social logins"
+        },
+        {
+          "id": 3,
+          "title": "Develop chat module",
+          "status": "pending",
+          "dueDate": "2025-07-30",
+          "priority": "high",
+          "description": "Socket.IO real-time messaging"
+        },
+        {
+          "id": 4,
+          "title": "Offline data sync",
+          "status": "pending",
+          "dueDate": "2025-08-20",
+          "priority": "high",
+          "description": "IndexedDB storage and background sync"
+        },
+        {
+          "id": 5,
+          "title": "App store deployment",
+          "status": "pending",
+          "dueDate": "2025-10-20",
+          "priority": "medium",
+          "description": "Prepare assets and CI/CD pipeline"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Marketing Campaign",
+      "status": "on-hold",
+      "startDate": "2025-03-01",
+      "endDate": "2025-08-15",
+      "assignedUsers": [
+        108,
+        109
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Audience research",
+          "status": "completed",
+          "dueDate": "2025-03-20",
+          "priority": "low",
+          "description": "Persona workshops and surveys"
+        },
+        {
+          "id": 2,
+          "title": "Creative concept",
+          "status": "completed",
+          "dueDate": "2025-04-05",
+          "priority": "medium",
+          "description": "Campaign slogan and visuals"
+        },
+        {
+          "id": 3,
+          "title": "Ad asset production",
+          "status": "on-hold",
+          "dueDate": "2025-05-25",
+          "priority": "high",
+          "description": "Video and banner design"
+        },
+        {
+          "id": 4,
+          "title": "Influencer outreach",
+          "status": "on-hold",
+          "dueDate": "2025-06-15",
+          "priority": "medium",
+          "description": "Negotiate sponsorship deals"
+        },
+        {
+          "id": 5,
+          "title": "Campaign launch",
+          "status": "on-hold",
+          "dueDate": "2025-08-01",
+          "priority": "low",
+          "description": "Cross-channel rollout"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Inventory System Upgrade",
+      "status": "completed",
+      "startDate": "2024-11-01",
+      "endDate": "2025-01-31",
+      "assignedUsers": [
+        110,
+        111
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Database migration",
+          "status": "completed",
+          "dueDate": "2024-12-05",
+          "priority": "high",
+          "description": "MySQL to PostgreSQL"
+        },
+        {
+          "id": 2,
+          "title": "API refactor",
+          "status": "completed",
+          "dueDate": "2024-12-20",
+          "priority": "high",
+          "description": "RESTful endpoints redesign"
+        },
+        {
+          "id": 3,
+          "title": "Barcode scanning module",
+          "status": "completed",
+          "dueDate": "2025-01-10",
+          "priority": "medium",
+          "description": "Zebra SDK integration"
+        },
+        {
+          "id": 4,
+          "title": "User training",
+          "status": "completed",
+          "dueDate": "2025-01-20",
+          "priority": "low",
+          "description": "Workshops & documentation"
+        },
+        {
+          "id": 5,
+          "title": "System go-live",
+          "status": "completed",
+          "dueDate": "2025-01-31",
+          "priority": "medium",
+          "description": "Cut-over and support"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Cloud Migration",
+      "status": "on-going",
+      "startDate": "2025-02-10",
+      "endDate": "2025-09-30",
+      "assignedUsers": [
+        112,
+        113,
+        114
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Assess current infrastructure",
+          "status": "completed",
+          "dueDate": "2025-03-01",
+          "priority": "high",
+          "description": "Inventory and dependency mapping"
+        },
+        {
+          "id": 2,
+          "title": "Select cloud provider",
+          "status": "completed",
+          "dueDate": "2025-03-20",
+          "priority": "medium",
+          "description": "AWS vs Azure evaluation"
+        },
+        {
+          "id": 3,
+          "title": "Set up landing zone",
+          "status": "in-progress",
+          "dueDate": "2025-05-30",
+          "priority": "low",
+          "description": "Networking and IAM policies"
+        },
+        {
+          "id": 4,
+          "title": "Migrate databases",
+          "status": "pending",
+          "dueDate": "2025-07-15",
+          "priority": "high",
+          "description": "DMS setup and replication"
+        },
+        {
+          "id": 5,
+          "title": "Decommission on-prem servers",
+          "status": "pending",
+          "dueDate": "2025-09-10",
+          "priority": "high",
+          "description": "Physical shutdown and disposal"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "E-commerce Platform Enhancement",
+      "status": "on-going",
+      "startDate": "2025-03-05",
+      "endDate": "2025-12-15",
+      "assignedUsers": [
+        115,
+        116
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Integrate payment gateway v2",
+          "status": "completed",
+          "dueDate": "2025-03-25",
+          "priority": "medium",
+          "description": "Support UPI and BNPL"
+        },
+        {
+          "id": 2,
+          "title": "Implement recommendation engine",
+          "status": "in-progress",
+          "dueDate": "2025-06-20",
+          "priority": "low",
+          "description": "Collaborative filtering model"
+        },
+        {
+          "id": 3,
+          "title": "Improve page load times",
+          "status": "pending",
+          "dueDate": "2025-08-05",
+          "priority": "medium",
+          "description": "Lazy loading and CDN setup"
+        },
+        {
+          "id": 4,
+          "title": "Add loyalty program",
+          "status": "pending",
+          "dueDate": "2025-10-01",
+          "priority": "high",
+          "description": "Points and tier logic"
+        },
+        {
+          "id": 5,
+          "title": "Holiday sale readiness",
+          "status": "pending",
+          "dueDate": "2025-11-20",
+          "priority": "medium",
+          "description": "Scale infrastructure and promo codes"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Customer Support Chatbot",
+      "status": "on-going",
+      "startDate": "2025-05-10",
+      "endDate": "2025-09-30",
+      "assignedUsers": [
+        117,
+        118
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Define intents and entities",
+          "status": "completed",
+          "dueDate": "2025-05-25",
+          "priority": "low",
+          "description": "Top 50 support queries"
+        },
+        {
+          "id": 2,
+          "title": "Train NLP model",
+          "status": "in-progress",
+          "dueDate": "2025-06-30",
+          "priority": "high",
+          "description": "Rasa NLU pipeline"
+        },
+        {
+          "id": 3,
+          "title": "Integrate with CRM",
+          "status": "pending",
+          "dueDate": "2025-07-25",
+          "priority": "medium",
+          "description": "Real-time ticket creation"
+        },
+        {
+          "id": 4,
+          "title": "Pilot with beta users",
+          "status": "pending",
+          "dueDate": "2025-08-20",
+          "priority": "medium",
+          "description": "Collect feedback and metrics"
+        },
+        {
+          "id": 5,
+          "title": "Full production rollout",
+          "status": "pending",
+          "dueDate": "2025-09-30",
+          "priority": "low",
+          "description": "24/7 coverage and monitoring"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Data Warehouse Implementation",
+      "status": "on-going",
+      "startDate": "2025-01-20",
+      "endDate": "2025-08-31",
+      "assignedUsers": [
+        119,
+        120,
+        121
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Design star schema",
+          "status": "completed",
+          "dueDate": "2025-02-15",
+          "priority": "high",
+          "description": "Fact and dimension tables"
+        },
+        {
+          "id": 2,
+          "title": "Set up ETL pipeline",
+          "status": "completed",
+          "dueDate": "2025-03-30",
+          "priority": "high",
+          "description": "Airflow DAGs for nightly loads"
+        },
+        {
+          "id": 3,
+          "title": "Build data marts",
+          "status": "in-progress",
+          "dueDate": "2025-05-30",
+          "priority": "medium",
+          "description": "Sales, marketing, finance"
+        },
+        {
+          "id": 4,
+          "title": "Implement BI dashboards",
+          "status": "pending",
+          "dueDate": "2025-07-15",
+          "priority": "low",
+          "description": "Looker & Power BI"
+        },
+        {
+          "id": 5,
+          "title": "User training & handover",
+          "status": "pending",
+          "dueDate": "2025-08-25",
+          "priority": "medium",
+          "description": "Workshops and best practices"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Cybersecurity Audit",
+      "status": "completed",
+      "startDate": "2024-12-01",
+      "endDate": "2025-03-15",
+      "assignedUsers": [
+        122,
+        123
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Vulnerability assessment",
+          "status": "completed",
+          "dueDate": "2025-01-05",
+          "priority": "high",
+          "description": "Nessus and OWASP Top 10"
+        },
+        {
+          "id": 2,
+          "title": "Penetration testing",
+          "status": "completed",
+          "dueDate": "2025-02-01",
+          "priority": "low",
+          "description": "External and internal"
+        },
+        {
+          "id": 3,
+          "title": "Policy review",
+          "status": "completed",
+          "dueDate": "2025-02-20",
+          "priority": "medium",
+          "description": "Update security policies"
+        },
+        {
+          "id": 4,
+          "title": "Remediation plan",
+          "status": "completed",
+          "dueDate": "2025-03-05",
+          "priority": "high",
+          "description": "Patch critical findings"
+        },
+        {
+          "id": 5,
+          "title": "Final audit report",
+          "status": "completed",
+          "dueDate": "2025-03-15",
+          "priority": "high",
+          "description": "Executive summary and next steps"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "AI Recommendation Engine",
+      "status": "on-going",
+      "startDate": "2025-04-01",
+      "endDate": "2025-12-31",
+      "assignedUsers": [
+        124,
+        125,
+        126
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Collect historical user data",
+          "status": "completed",
+          "dueDate": "2025-04-30",
+          "priority": "low",
+          "description": "Purchase and browsing history"
+        },
+        {
+          "id": 2,
+          "title": "Build baseline model",
+          "status": "in-progress",
+          "dueDate": "2025-06-20",
+          "priority": "medium",
+          "description": "Matrix factorization"
+        },
+        {
+          "id": 3,
+          "title": "A/B test model variants",
+          "status": "pending",
+          "dueDate": "2025-08-15",
+          "priority": "high",
+          "description": "CTR and conversion metrics"
+        },
+        {
+          "id": 4,
+          "title": "Real-time inference API",
+          "status": "pending",
+          "dueDate": "2025-10-01",
+          "priority": "high",
+          "description": "gRPC service on Kubernetes"
+        },
+        {
+          "id": 5,
+          "title": "Personalization dashboard",
+          "status": "pending",
+          "dueDate": "2025-12-15",
+          "priority": "low",
+          "description": "Admin control and analytics"
+        }
+      ]
+    }
+  ]
 }

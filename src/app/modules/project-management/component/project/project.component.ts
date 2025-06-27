@@ -44,8 +44,8 @@ export class ProjectComponent {
       page: this.page || 1,
     }
     this.projectService.getProjects(data).subscribe((res: any) => {
-      this.projects = res?.data ?? [];
-      this.totalItems = res?.data?.length;
+      this.projects = res ?? [];
+      this.totalItems = res?.length;
       this.filteredProjects = [...this.projects];
       this.page = 0;
       this.paginate()

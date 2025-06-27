@@ -51,7 +51,7 @@ export class ProjectDetailComponent {
       page: this.page || 1,
     }
     this.projectService.getProjects(data).subscribe((res: any) => {
-      const projects = res?.data;
+      const projects = res;
       const id = +this.projectId
       this.project = projects.find((el: any) => el.id == id);
       this.tasks = this.project?.tasks ?? [];

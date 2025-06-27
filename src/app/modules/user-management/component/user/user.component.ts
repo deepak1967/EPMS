@@ -19,6 +19,7 @@ export class UserComponent {
   page: any = 1;
   limit: any = 20;
   totalItems: any
+  defaultImg:string = "./../../../../../assets/default.jpeg"
 
   trackBy: TrackByFunction<any> = (index: number, item: any) => item.id ?? index;
 
@@ -40,8 +41,8 @@ export class UserComponent {
       page: this.page || 1,
     }
     this.userService.getUsers(data).subscribe((res: any) => {
-      this.users = res?.data ?? [];
-      this.totalItems = res?.data?.length;
+      this.users = res ?? [];
+      this.totalItems = res?.length;
       this.filteredUsers = [...this.users];
       this.page = 0;
       this.paginate()
