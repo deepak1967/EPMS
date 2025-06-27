@@ -33,7 +33,8 @@ export class AddProjectComponent {
       status: ['', Validators.required],
       startDate: ['', Validators.required],
       endDate: ['', Validators.required],
-      assignedUsers: ['',]
+      assignedUsers: ['',],
+      tasks: fb.array([]),
     });
   }
 
