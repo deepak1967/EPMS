@@ -15,7 +15,7 @@ export class AddProjectComponent {
   userForm: FormGroup;
   mode: string = '';
   title: string = 'Add New Project'
-  parsedIds: string[] = [];
+  parsedUser: string[] = [];
   projectId: string = '';
   projects: any = []
 
@@ -61,7 +61,7 @@ export class AddProjectComponent {
     data.id = this.data?.user?.id
     if (this.data.mode === 'add') {
       this.projectService.createProjects(data).subscribe((res) => {
-       if (res) {
+        if (res) {
           this.toastService.add('Project successfully added.', 2000, "success");
           this.dialogRef.close();
         }
@@ -70,7 +70,7 @@ export class AddProjectComponent {
       });
     } else {
       this.projectService.updateProjects(data).subscribe((res) => {
-       if (res) {
+        if (res) {
           this.toastService.add('Project successfully added.', 2000, "success");
           this.dialogRef.close();
         }
@@ -84,9 +84,9 @@ export class AddProjectComponent {
     this.dialogRef.close();
   }
 
-  addIds(event: Event): void {
+  addUsers(event: Event): void {
     const input = (event.target as HTMLTextAreaElement).value;
-    this.parsedIds = input.split(',')
+    this.parsedUser = input.split(',')
       .map(id => id.trim())
       .filter(id => id !== '');
   }

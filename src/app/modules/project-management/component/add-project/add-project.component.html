@@ -62,13 +62,13 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Assigned User IDs</mat-label>
+      <mat-label>Assigned Users</mat-label>
       <textarea
         matInput
         rows="4"
-        placeholder="IDs (comma separated)"
+        placeholder="Users (comma separated)"
         formControlName="assignedUsers"
-        (input)="addIds($event)"
+        (input)="addUsers($event)"
       ></textarea>
     </mat-form-field>
   </form>
