@@ -17,7 +17,7 @@ export class ProjectDetailComponent {
   projectId: string = '';
 
   tasks: any = [];
-  displayedColumns: string[] = ['id', 'title', 'priority','status', 'dueDate', 'actions'];
+  displayedColumns: string[] = ['id', 'title', 'priority', 'status', 'dueDate', 'actions'];
   filteredTasks: any[] = [];
   pagedTasks: any[] = [];
   page: any = 1;
@@ -64,7 +64,7 @@ export class ProjectDetailComponent {
     });
 
     dialogRef.afterClosed();
-    // this.getTasks();
+    this.getProjects();
 
   }
 
@@ -74,13 +74,13 @@ export class ProjectDetailComponent {
       data: { mode: 'edit', projectId: this.projectId, task }
     });
     ref.afterClosed();
-    // this.getTasks();
+    this.getProjects();
   }
 
   deleteTask(task: any) {
     this.taskService.deleteTask(this.projectId, task?.id).subscribe((res: any) => {
       console.log("task deleted successfully");
-      // this.getTasks();
+      this.getProjects();
     })
   }
 
@@ -95,6 +95,10 @@ export class ProjectDetailComponent {
     this.page = event.pageIndex;
     this.limit = event.pageSize;
     this.paginate();
+  }
+
+  applySort(sortedData: any) {
+    this.filteredTasks = sortedData;
   }
 
   paginate() {

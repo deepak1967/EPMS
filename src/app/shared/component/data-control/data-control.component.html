@@ -8,6 +8,26 @@
     />
   </mat-form-field>
 
+  <mat-form-field appearance="fill" *ngIf="IsShowSorting">
+    <mat-label>Sort By</mat-label>
+    <mat-select
+      (selectionChange)="applySort($event.value.field, $event.value.dir)"
+    >
+      <mat-option [value]="{ field: 'priority', dir: 'asc' }"
+        >Priority: Low → High</mat-option
+      >
+      <mat-option [value]="{ field: 'priority', dir: 'desc' }"
+        >Priority: High → Low</mat-option
+      >
+      <mat-option [value]="{ field: 'dueDate', dir: 'asc' }"
+        >Date: Old → New</mat-option
+      >
+      <mat-option [value]="{ field: 'dueDate', dir: 'desc' }"
+        >Date: New → Old</mat-option
+      >
+    </mat-select>
+  </mat-form-field>
+
   <mat-paginator
     [length]="totalItems"
     [pageSize]="pageSize"
