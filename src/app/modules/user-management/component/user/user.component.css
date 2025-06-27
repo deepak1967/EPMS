@@ -1,7 +1,6 @@
 .table-actions {
   display: flex;
   justify-content: flex-end;
-  padding: 16px;
 }
 
 .table-actions button mat-icon {
@@ -10,7 +9,7 @@
 
 .table-container {
   overflow-x: auto;
-  margin: 16px;
+  margin: 10px;
 }
 
 table {
