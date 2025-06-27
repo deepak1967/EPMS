@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TrackByFunction } from '@angular/core';
 import { SharedService } from 'src/app/shared/services/shared.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
@@ -20,6 +20,8 @@ export class ProjectComponent {
   page: any = 1;
   limit: any = 20;
   totalItems: any
+
+  trackBy: TrackByFunction<any> = (index: number, item: any) => item.id ?? index;
 
 
   constructor(
@@ -55,10 +57,7 @@ export class ProjectComponent {
       width: '600px',
       data: { mode: 'add' }
     });
-
-    dialogRef.afterClosed();
-    this.getProjects();
-
+    dialogRef.afterClosed().subscribe(() => this.getProjects());
   }
 
   editProject(user: any) {
@@ -66,8 +65,7 @@ export class ProjectComponent {
       width: '600px',
       data: { mode: 'edit', user }
     });
-    ref.afterClosed();
-    this.getProjects();
+    ref.afterClosed().subscribe(() => this.getProjects());
   }
 
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, TrackByFunction } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { SharedService } from 'src/app/shared/services/shared.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -20,7 +20,7 @@ export class UserComponent {
   limit: any = 20;
   totalItems: any
 
-
+  trackBy: TrackByFunction<any> = (index: number, item: any) => item.id ?? index;
 
   constructor(
     private userService: UserService,
@@ -31,7 +31,6 @@ export class UserComponent {
 
   ngOnInit() {
     this.sharedService.setTitle('User Management')
-
     this.getUsers();
   }
 
@@ -55,8 +54,9 @@ export class UserComponent {
       data: { mode: 'add' }
     });
 
-    dialogRef.afterClosed();
-    this.getUsers();
+    dialogRef.afterClosed().subscribe(() => {
+      this.getUsers();
+    });
 
   }
 
@@ -65,8 +65,9 @@ export class UserComponent {
       width: '600px',
       data: { mode: 'edit', user }
     });
-    ref.afterClosed().subscribe();
-    this.getUsers();
+    ref.afterClosed().subscribe(() => {
+      this.getUsers();
+    });
   }
 
   deleteUser(user: any) {

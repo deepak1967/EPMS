@@ -6,7 +6,7 @@
       <mat-icon>assignment</mat-icon>
       <div class="kpi-details">
         <h3>Projects</h3>
-        <p>{{projects.total }}</p>
+        <p>{{projects.total || 0}}</p>
       </div>
     </mat-card>
 
@@ -14,7 +14,7 @@
       <mat-icon>people</mat-icon>
       <div class="kpi-details">
         <h3>Active Users</h3>
-        <p>{{ users.active }}</p>
+        <p>{{ users.active || 0}}</p>
       </div>
     </mat-card>
 
@@ -22,7 +22,7 @@
       <mat-icon>schedule</mat-icon>
       <div class="kpi-details">
         <h3>Overdue Tasks</h3>
-        <p>{{ tasks.overdue_1_3 + tasks.overdue_4_7 + tasks.overdue_7_plus }}</p>
+        <p>{{ tasks.overdue_1_3 + tasks.overdue_4_7 + tasks.overdue_7_plus  || 0}}</p>
       </div>
     </mat-card>
   </div>

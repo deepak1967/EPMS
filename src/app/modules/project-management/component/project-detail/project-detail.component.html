@@ -48,6 +48,7 @@
     [dataSource]="pagedTasks"
     class="mat-elevation-z8"
     multiTemplateDataRows
+    [trackBy]="trackBy"
   >
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>ID</th>

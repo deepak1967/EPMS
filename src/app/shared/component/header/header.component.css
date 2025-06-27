@@ -1,4 +1,3 @@
-/* Layout Containers */
 .sidenav-container {
   height: 100vh;
 }
@@ -9,7 +8,6 @@
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo Styling */
 .logo-wrapper {
   display: flex;
   justify-content: center;
@@ -23,7 +21,15 @@
   object-fit: contain;
 }
 
-/* Toolbar */
+.user-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  border: none;
+  text-transform: none;
+}
+
 .mat-toolbar {
   position: sticky;
   top: 0;
@@ -33,18 +39,10 @@
   padding: 0 16px;
 }
 
-.toolbar-title {
-  font-size: 20px;
-  font-weight: 600;
-  margin-left: 8px;
-  white-space: nowrap;
-}
-
 .spacer {
   flex: 1 1 auto;
 }
 
-/* Navigation Menu Items */
 .main-nav a {
   display: flex;
   align-items: center;
@@ -63,14 +61,12 @@
   font-size: 18px;
 }
 
-/* Content Area */
 .main-content {
   padding: 16px;
   background-color: #f4f6f8;
-  min-height: calc(100vh - 64px); /* Assuming toolbar is 64px */
+  min-height: calc(100vh - 64px); 
 }
 
-/* Profile Menu */
 .profile-menu {
   display: flex;
   align-items: center;
@@ -85,7 +81,6 @@
   margin-right: 8px;
 }
 
-/* Responsive Breakpoints */
 @media (max-width: 1024px) {
   .daykart-logo {
     width: 140px;
@@ -111,6 +106,7 @@
 
   .toolbar-title {
     font-size: 16px;
+    margin-left: 5px;
   }
 
   .main-content {
@@ -121,6 +117,7 @@
 @media (max-width: 480px) {
   .toolbar-title {
     font-size: 15px;
+    margin-left: 5px;
   }
 
   .menu-text {

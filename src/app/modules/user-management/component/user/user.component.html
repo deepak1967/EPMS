@@ -12,13 +12,14 @@
     [totalItems]="totalItems"
     [pageSize]="limit"
     (pageChange)="onPageChange($event)"
-     (filtered)="onFilterChanged($event)"
+    (filtered)="onFilterChanged($event)"
   ></app-data-control>
   <table
     mat-table
     [dataSource]="pagedUsers"
     class="mat-elevation-z8"
     multiTemplateDataRows
+    [trackBy]="trackBy"
   >
     <ng-container matColumnDef="image">
       <th mat-header-cell *matHeaderCellDef>Image</th>
@@ -62,6 +63,7 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+   <tr mat-row *matRowDef="let row; columns: displayedColumns" [attr.data-id]="row.id" ></tr>
+
   </table>
 </div>

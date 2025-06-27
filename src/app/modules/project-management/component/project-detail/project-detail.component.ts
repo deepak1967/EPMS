@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TrackByFunction } from '@angular/core';
 import { SharedService } from 'src/app/shared/services/shared.service';
 import { ProjectService } from '../../service/project.service';
 import { ActivatedRoute } from '@angular/router';
@@ -24,6 +24,9 @@ export class ProjectDetailComponent {
   page: any = 1;
   limit: any = 20;
   totalItems: any
+
+  trackBy: TrackByFunction<any> = (index: number, item: any) => item.id ?? index;
+
 
   constructor(
     private sharedService: SharedService,
@@ -64,10 +67,7 @@ export class ProjectDetailComponent {
       width: '600px',
       data: { mode: 'add', projectId: this.projectId }
     });
-
-    dialogRef.afterClosed();
-    this.getProject();
-
+    dialogRef.afterClosed().subscribe(() => this.getProject());
   }
 
   editTask(task: any) {
@@ -75,8 +75,8 @@ export class ProjectDetailComponent {
       width: '600px',
       data: { mode: 'edit', projectId: this.projectId, task }
     });
-    ref.afterClosed();
-    this.getProject();
+    ref.afterClosed().subscribe(() => this.getProject());
+
   }
 
   deleteTask(task: any) {
