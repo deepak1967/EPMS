@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddUserComponent } from '../add-user/add-user.component';
 import { PageEvent } from '@angular/material/paginator';
 import { ToastService } from 'src/app/shared/services/toast.service';
+import { User } from 'src/app/interface';
 
 @Component({
   selector: 'app-user',
@@ -14,14 +15,14 @@ import { ToastService } from 'src/app/shared/services/toast.service';
 export class UserComponent {
   users: any = [];
   displayedColumns: string[] = ['image', 'id', 'name', 'email', 'role', 'actions'];
-  filteredUsers: any[] = [];
-  pagedUsers: any[] = [];
-  page: any = 1;
-  limit: any = 20;
+  filteredUsers: User[] = [];
+  pagedUsers: User[] = [];
+  page: number = 1;
+  limit: number = 20;
   totalItems: any
   defaultImg:string = "./../../../../../assets/default.jpeg"
 
-  trackBy: TrackByFunction<any> = (index: number, item: any) => item.id ?? index;
+  trackBy: TrackByFunction<any> = (index: number, item: User) => item.id ?? index;
 
   constructor(
     private userService: UserService,
@@ -71,8 +72,8 @@ export class UserComponent {
     });
   }
 
-  deleteUser(user: any) {
-    this.userService.deleteUser(user?.id).subscribe((res: any) => {
+  deleteUser(user: User) {
+    this.userService.deleteUser(user?.id).subscribe((res: User) => {
       if (res) {
         this.toastService.add('User successfully deleted.', 2000, "success");
         this.getUsers()

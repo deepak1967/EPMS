@@ -7,6 +7,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { TaskService } from '../../service/task.service';
 import { AddTaskComponent } from '../add-task/add-task.component';
 import { ToastService } from 'src/app/shared/services/toast.service';
+import { Project, Task } from 'src/app/interface';
 
 @Component({
   selector: 'app-project-detail',
@@ -19,10 +20,10 @@ export class ProjectDetailComponent {
 
   tasks: any = [];
   displayedColumns: string[] = ['id', 'title', 'priority', 'status', 'dueDate', 'actions'];
-  filteredTasks: any[] = [];
-  pagedTasks: any[] = [];
-  page: any = 1;
-  limit: any = 20;
+  filteredTasks: Task[] = [];
+  pagedTasks: Task[] = [];
+  page: number = 1;
+  limit: number = 20;
   totalItems: any
 
   trackBy: TrackByFunction<any> = (index: number, item: any) => item.id ?? index;
@@ -52,8 +53,8 @@ export class ProjectDetailComponent {
     }
     this.projectService.getProjects(data).subscribe((res: any) => {
       const projects = res;
-      const id = +this.projectId
-      this.project = projects.find((el: any) => el.id == id);
+      const id = this.projectId
+      this.project = projects.find((el: Project) => el.id == id);
       this.tasks = this.project?.tasks ?? [];
       this.totalItems = this.tasks?.length;
       this.filteredTasks = [...this.tasks];
@@ -70,7 +71,7 @@ export class ProjectDetailComponent {
     dialogRef.afterClosed().subscribe(() => this.getProject());
   }
 
-  editTask(task: any) {
+  editTask(task: Task) {
     const ref = this.dialog.open(AddTaskComponent, {
       width: '600px',
       data: { mode: 'edit', projectId: this.projectId, task }
@@ -79,8 +80,8 @@ export class ProjectDetailComponent {
 
   }
 
-  deleteTask(task: any) {
-    this.taskService.deleteTask(this.projectId, task?.id).subscribe((res: any) => {
+  deleteTask(task: Task) {
+    this.taskService.deleteTask(this.projectId, task?.id).subscribe((res: Task) => {
       if (res) {
         this.toastService.add('Task successfully deleted.', 2000, "success");
         this.getProject()
@@ -112,7 +113,5 @@ export class ProjectDetailComponent {
     const end = start + this.limit;
     this.pagedTasks = this.filteredTasks.slice(start, end);
   }
-
-
 
 }

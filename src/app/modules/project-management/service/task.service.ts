@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Project, Task } from 'src/app/interface';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -16,8 +17,8 @@ export class TaskService {
     return this.http.post(this.baseUrl + `projects/${projectId}/tasks`, task);
   }
 
-  updateTask(projectId: any, task: any) {
-    return this.http.put(this.baseUrl + `projects/${projectId}/tasks/${task.id}`, task);   // or PATCH
+  updateTask(projectId: string, task: Task):Observable<Project> {
+    return this.http.put<Project>(this.baseUrl + `projects/${projectId}/tasks/${task.id}`, task);   // or PATCH
   }
 
   deleteTask(projectId: any, taskId: any): Observable<any> {
