@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProjectService } from '../../service/project.service';
 import { ActivatedRoute } from '@angular/router';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-add-project',
@@ -23,7 +24,7 @@ export class AddProjectComponent {
     private fb: FormBuilder,
     private projectService: ProjectService,
     @Inject(MAT_DIALOG_DATA) public data: any,
-
+    private toastService: ToastService,
     private dialogRef: MatDialogRef<AddProjectComponent>,
 
   ) {
@@ -59,13 +60,22 @@ export class AddProjectComponent {
     const data = this.userForm.value;
     data.id = this.data?.user?.id
     if (this.data.mode === 'add') {
-      this.projectService.createProjects(data).subscribe(() => {
-        console.log("save form", data);
-
+      this.projectService.createProjects(data).subscribe((res) => {
+       if (res) {
+          this.toastService.add('Project successfully added.', 2000, "success");
+          this.dialogRef.close();
+        }
+      }, (error) => {
+        this.toastService.add('Something went wrong!', 2000, "error");
       });
     } else {
-      this.projectService.updateProjects(data).subscribe(() => {
-        console.log("save form", data);
+      this.projectService.updateProjects(data).subscribe((res) => {
+       if (res) {
+          this.toastService.add('Project successfully added.', 2000, "success");
+          this.dialogRef.close();
+        }
+      }, (error) => {
+        this.toastService.add('Something went wrong!', 2000, "error");
       });
     }
   }

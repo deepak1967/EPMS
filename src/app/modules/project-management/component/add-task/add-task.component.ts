@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TaskService } from '../../service/task.service';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-add-task',
@@ -17,7 +18,8 @@ export class AddTaskComponent {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<AddTaskComponent>,
-    private taskService: TaskService
+    private taskService: TaskService,
+    private toastService: ToastService
   ) {
     this.taskForm = this.fb.group({
       title: ['', Validators.required],
@@ -40,12 +42,22 @@ export class AddTaskComponent {
     const data = this.taskForm.value;
     data.id = this.data?.task?.id
     if (this.data.mode === 'add') {
-      this.taskService.createTask(this.data.projectId, data).subscribe(() => {
-        this.dialogRef.close();
+      this.taskService.createTask(this.data.projectId, data).subscribe((res) => {
+        if (res) {
+          this.toastService.add('Task successfully added.', 2000, "success");
+          this.dialogRef.close();
+        }
+      }, (error) => {
+        this.toastService.add('Something went wrong!', 2000, "error");
       });
     } else {
-      this.taskService.updateTask(this.data.projectId, data).subscribe(() => {
-        this.dialogRef.close();
+      this.taskService.updateTask(this.data.projectId, data).subscribe((res) => {
+        if (res) {
+          this.toastService.add('Task successfully added.', 2000, "success");
+          this.dialogRef.close();
+        }
+      }, (error) => {
+        this.toastService.add('Something went wrong!', 2000, "error");
       });
     }
   }

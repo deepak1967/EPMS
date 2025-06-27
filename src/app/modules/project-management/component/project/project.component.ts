@@ -5,6 +5,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { ProjectService } from '../../service/project.service';
 import { Router } from '@angular/router';
 import { AddProjectComponent } from '../add-project/add-project.component';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-project',
@@ -25,7 +26,8 @@ export class ProjectComponent {
     private projectService: ProjectService,
     private sharedService: SharedService,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private toastService: ToastService
   ) { }
 
   ngOnInit() {
@@ -75,9 +77,13 @@ export class ProjectComponent {
 
   deleteProject(project: any) {
     this.projectService.deleteProject(project?.id).subscribe((res: any) => {
-      console.log("project deleted successfully");
-      this.getProjects();
-    })
+      if (res) {
+        this.toastService.add('Project successfully deleted.', 2000, "success");
+        this.getProjects()
+      }
+    }, (error) => {
+      this.toastService.add('Something went wrong!', 2000, "error");
+    });
   }
 
   onFilterChanged(filtered: any[]): void {

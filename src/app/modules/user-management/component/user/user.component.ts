@@ -4,6 +4,7 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddUserComponent } from '../add-user/add-user.component';
 import { PageEvent } from '@angular/material/paginator';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-user',
@@ -25,6 +26,7 @@ export class UserComponent {
     private userService: UserService,
     private sharedService: SharedService,
     private dialog: MatDialog,
+    public toastService: ToastService
   ) { }
 
   ngOnInit() {
@@ -63,15 +65,19 @@ export class UserComponent {
       width: '600px',
       data: { mode: 'edit', user }
     });
-    ref.afterClosed();
+    ref.afterClosed().subscribe();
     this.getUsers();
   }
 
   deleteUser(user: any) {
     this.userService.deleteUser(user?.id).subscribe((res: any) => {
-      console.log("user deleted successfully");
-      this.getUsers();
-    })
+      if (res) {
+        this.toastService.add('User successfully deleted.', 2000, "success");
+        this.getUsers()
+      }
+    }, (error) => {
+      this.toastService.add('Something went wrong!', 2000, "error");
+    });
   }
 
   onFilterChanged(filtered: any[]): void {
@@ -93,5 +99,9 @@ export class UserComponent {
     this.pagedUsers = this.filteredUsers.slice(start, end);
   }
 
+
+  removeToast(index: number) {
+    this.toastService.remove(index);
+  }
 
 }

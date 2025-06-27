@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { TaskService } from '../../service/task.service';
 import { AddTaskComponent } from '../add-task/add-task.component';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -30,6 +31,7 @@ export class ProjectDetailComponent {
     private activatedRoute: ActivatedRoute,
     private taskService: TaskService,
     private dialog: MatDialog,
+    private toastService: ToastService
   ) { }
 
   ngOnInit() {
@@ -37,10 +39,10 @@ export class ProjectDetailComponent {
     this.activatedRoute.params.subscribe((params: any) => {
       this.projectId = params.id
     });
-    this.getProjects();
+    this.getProject();
   }
 
-  getProjects() {
+  getProject() {
     const data = {
       limit: this.limit || 20,
       page: this.page || 1,
@@ -64,7 +66,7 @@ export class ProjectDetailComponent {
     });
 
     dialogRef.afterClosed();
-    this.getProjects();
+    this.getProject();
 
   }
 
@@ -74,14 +76,18 @@ export class ProjectDetailComponent {
       data: { mode: 'edit', projectId: this.projectId, task }
     });
     ref.afterClosed();
-    this.getProjects();
+    this.getProject();
   }
 
   deleteTask(task: any) {
     this.taskService.deleteTask(this.projectId, task?.id).subscribe((res: any) => {
-      console.log("task deleted successfully");
-      this.getProjects();
-    })
+      if (res) {
+        this.toastService.add('Task successfully deleted.', 2000, "success");
+        this.getProject()
+      }
+    }, (error) => {
+      this.toastService.add('Something went wrong!', 2000, "error");
+    });
   }
 
   onFilterChanged(filtered: any[]): void {

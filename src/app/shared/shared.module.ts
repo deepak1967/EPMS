@@ -22,13 +22,15 @@ import { HeaderComponent } from './component/header/header.component';
 import { StartComponent } from './component/start/start.component';
 import { DataControlComponent } from './component/data-control/data-control.component';
 import { FormsModule } from '@angular/forms';
+import { ToasterComponent } from './component/toaster/toaster.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     StartComponent,
-    DataControlComponent
+    DataControlComponent,
+    ToasterComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,10 @@
+<div class="toast-container">
+  <div
+    class="toast"
+    *ngFor="let toast of toastService.toasts; let i = index"
+    [ngClass]="toast.type"
+  >
+    <mat-icon class="icon">{{ toast.type === 'success' ? 'check_circle' : 'error' }}</mat-icon>
+    <span class="message">{{ toast.message }}</span>
+  </div>
+</div>
