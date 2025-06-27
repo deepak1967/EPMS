@@ -4,6 +4,20 @@
       <h2 class="login-title">Login to EPMS</h2>
 
       <mat-form-field appearance="fill" class="full-width">
+        <mat-select
+          placeholder="Role* "
+          formControlName="role"
+        >
+          <mat-option value="admin">Admin</mat-option>
+          <mat-option value="project-manager">Project Manager</mat-option>
+          <mat-option value="developer">Developer</mat-option>
+        </mat-select>
+        <mat-error *ngIf="loginForm.get('role')?.hasError('required')"
+          >Role is required.</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
         <mat-label>Email</mat-label>
         <input
           matInput

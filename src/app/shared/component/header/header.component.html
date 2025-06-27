@@ -15,7 +15,7 @@
       <a mat-list-item routerLink="/project">
         <span class="menu-text">Project Management</span>
       </a>
-      <a mat-list-item routerLink="/user">
+      <a mat-list-item routerLink="/user" *ngIf="role === 'admin'">
         <span class="menu-text">User Management</span>
       </a>
       <a mat-list-item routerLink="/notification">
@@ -37,7 +37,7 @@
       </button>
       <span class="toolbar-title"> {{ headerTitle }}</span>
       <span class="spacer"></span>
-      <button mat-button [matMenuTriggerFor]="menu">Hi Admin</button>
+      <button mat-button [matMenuTriggerFor]="menu">Hi {{role | titlecase}}</button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>Hi, Admin</button>
         <button mat-menu-item (click)="logout()">Logout</button>

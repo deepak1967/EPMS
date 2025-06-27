@@ -13,6 +13,7 @@ import { Subject, takeUntil } from 'rxjs';
 export class HeaderComponent {
   isHandset: boolean = false;
   headerTitle: string = '';
+  role: any;
   private destroy$ = new Subject<void>();
 
 
@@ -22,6 +23,7 @@ export class HeaderComponent {
     private sharedService: SharedService,
     private cdr: ChangeDetectorRef
   ) {
+    this.role = localStorage.getItem('role');
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isHandset = result.matches;
     });

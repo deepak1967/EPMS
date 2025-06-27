@@ -13,6 +13,7 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.loginForm = this.fb.group({
+      role: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     });
@@ -20,12 +21,12 @@ export class LoginComponent {
 
   submitForm() {
     if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
+      const { email, password, role } = this.loginForm.value;
       this.authService.login(this.loginForm.value).subscribe((res: any) => {
-        localStorage.setItem("token", res?.token)
+        localStorage.setItem("token", res?.token);
+        localStorage.setItem("role", res?.role || role)
         this.router.navigate(['dashboard']);
       })
-      console.log('Login submitted:', email, password);
     } else {
       this.loginForm.markAllAsTouched();
     }
