@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
-import { SharedService } from '../../shared.service';
+import { SharedService } from '../../services/shared.service';
 import { Subject, takeUntil } from 'rxjs';
 
 

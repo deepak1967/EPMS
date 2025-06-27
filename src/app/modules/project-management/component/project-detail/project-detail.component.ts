@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SharedService } from 'src/app/shared/shared.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
 import { ProjectService } from '../../service/project.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';

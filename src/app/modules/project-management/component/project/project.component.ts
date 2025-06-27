@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SharedService } from 'src/app/shared/shared.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { ProjectService } from '../../service/project.service';

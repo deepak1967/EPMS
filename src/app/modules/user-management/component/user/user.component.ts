@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../service/user.service';
-import { SharedService } from 'src/app/shared/shared.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddUserComponent } from '../add-user/add-user.component';
 import { PageEvent } from '@angular/material/paginator';

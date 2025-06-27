@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Chart, ChartConfiguration, ChartItem, registerables } from 'chart.js';
 import { DashboardService } from '../../dashboard.service';
-import { SharedService } from 'src/app/shared/shared.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-dashboard',

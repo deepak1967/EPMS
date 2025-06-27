@@ -23,7 +23,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ProjectComponent } from './component/project/project.component';
 import { AddProjectComponent } from './component/add-project/add-project.component';
 import { ProjectDetailComponent } from './component/project-detail/project-detail.component';
-import { UserManagementModule } from '../user-management/user-management.module';
 import { AddTaskComponent } from './component/add-task/add-task.component';
 
 
@@ -51,7 +50,6 @@ import { AddTaskComponent } from './component/add-task/add-task.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatChipsModule,
-    UserManagementModule
   ]
 })
 export class ProjectManagementModule { }
