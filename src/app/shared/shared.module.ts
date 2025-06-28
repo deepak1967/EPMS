@@ -15,11 +15,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { HeaderComponent } from './component/header/header.component';
 import { StartComponent } from './component/start/start.component';
 import { DataControlComponent } from './component/data-control/data-control.component';
 import { ToasterComponent } from './component/toaster/toaster.component';
+import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { ToasterComponent } from './component/toaster/toaster.component';
     HeaderComponent,
     StartComponent,
     DataControlComponent,
-    ToasterComponent
+    ToasterComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule,
@@ -44,6 +47,7 @@ import { ToasterComponent } from './component/toaster/toaster.component';
     MatIconModule,
     MatTableModule,
     MatSortModule,
+    MatDialogModule
 
   ],
   exports: [

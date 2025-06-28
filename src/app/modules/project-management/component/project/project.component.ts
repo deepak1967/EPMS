@@ -6,6 +6,7 @@ import { ProjectService } from '../../service/project.service';
 import { Router } from '@angular/router';
 import { AddProjectComponent } from '../add-project/add-project.component';
 import { ToastService } from 'src/app/shared/services/toast.service';
+import { ConfirmDialogService } from 'src/app/shared/services/confirm-dialog.service';
 
 @Component({
   selector: 'app-project',
@@ -29,7 +30,8 @@ export class ProjectComponent {
     private sharedService: SharedService,
     private dialog: MatDialog,
     private router: Router,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private confirmService: ConfirmDialogService
   ) { }
 
   ngOnInit() {
@@ -74,14 +76,21 @@ export class ProjectComponent {
   }
 
   deleteProject(project: any) {
-    this.projectService.deleteProject(project?.id).subscribe((res: any) => {
-      if (res) {
-        this.toastService.add('Project successfully deleted.', 2000, "success");
-        this.getProjects()
-      }
-    }, (error) => {
-      this.toastService.add('Something went wrong!', 2000, "error");
-    });
+    this.confirmService
+      .confirm('Confirm Deletion', `Are you sure you want to delete project?`)
+      .subscribe((confirmed) => {
+        if (confirmed) {
+          this.projectService.deleteProject(project?.id).subscribe((res: any) => {
+            if (res) {
+              this.toastService.add('Project successfully deleted.', 2000, "success");
+              this.getProjects()
+            }
+          }, (error) => {
+            this.toastService.add('Something went wrong!', 2000, "error");
+          });
+        }
+      });
+
   }
 
   onFilterChanged(filtered: any[]): void {

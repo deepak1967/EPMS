@@ -8,6 +8,7 @@ import { TaskService } from '../../service/task.service';
 import { AddTaskComponent } from '../add-task/add-task.component';
 import { ToastService } from 'src/app/shared/services/toast.service';
 import { Project, Task } from 'src/app/interface';
+import { ConfirmDialogService } from 'src/app/shared/services/confirm-dialog.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -35,7 +36,8 @@ export class ProjectDetailComponent {
     private activatedRoute: ActivatedRoute,
     private taskService: TaskService,
     private dialog: MatDialog,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private confirmService: ConfirmDialogService
   ) { }
 
   ngOnInit() {
@@ -64,7 +66,11 @@ export class ProjectDetailComponent {
   }
 
 deleteTask(task: Task) {
-    this.taskService.getProject(this.projectId).subscribe(
+  this.confirmService
+    .confirm('Confirm Deletion', `Are you sure you want to delete task?`)
+    .subscribe((confirmed) => {
+      if (confirmed) {
+         this.taskService.getProject(this.projectId).subscribe(
       (project: any) => {
         if (project && project.tasks) {
           // Remove the task from the tasks array
@@ -103,6 +109,9 @@ deleteTask(task: Task) {
         );
       }
     );
+      }
+    });
+   
   }
 
   addTask(): void {
