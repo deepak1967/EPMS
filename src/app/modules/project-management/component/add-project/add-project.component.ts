@@ -88,8 +88,8 @@ export class AddProjectComponent {
   addUsers(event: Event): void {
     const input = (event.target as HTMLTextAreaElement).value;
     this.parsedUser = input.split(',')
-      .map(id => id.trim())
-      .filter(id => id !== '');
+      .map(value => value.trim())
+      .filter(value => value !== '');
   }
 
 

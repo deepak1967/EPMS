@@ -15,14 +15,13 @@
       <div><strong>End Date:</strong> {{ project.endDate | date }}</div>
       <p class="full-row">
         <strong>Assigned Users:</strong>
-        <span *ngFor="let uid of project.assignedUsers; let last = last">
-          {{ uid }}<span *ngIf="!last">, </span>
+        <span>
+          {{ project.assignedUsers }}
         </span>
       </p>
     </div>
   </mat-card-content>
 </mat-card>
-
 
 <div class="table-actions">
   <button mat-raised-button color="primary" (click)="addTask()">
@@ -63,7 +62,7 @@
 
     <ng-container matColumnDef="dueDate">
       <th mat-header-cell *matHeaderCellDef>Due Date</th>
-      <td mat-cell *matCellDef="let element">{{ element.dueDate | date}}</td>
+      <td mat-cell *matCellDef="let element">{{ element.dueDate | date }}</td>
     </ng-container>
 
     <ng-container matColumnDef="priority">

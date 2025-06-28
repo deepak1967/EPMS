@@ -36,28 +36,48 @@ export class AddTaskComponent {
     }
 
   }
+
   save(): void {
     if (!this.taskForm.valid) return;
 
-    const data = this.taskForm.value;
-    data.id = this.data?.task?.id
+    const taskData = this.taskForm.value;
+
     if (this.data.mode === 'add') {
-      this.taskService.createTask(this.data.projectId, data).subscribe((res) => {
-        if (res) {
+      this.taskService.getProject(this.data.projectId).subscribe((project: any) => {
+        if (!project.tasks) {
+          project.tasks = [];
+        }
+        taskData.id = project.tasks.length + 1;
+        project.tasks.push(taskData);
+
+        this.taskService.updateProject(this.data.projectId, project).subscribe(() => {
           this.toastService.add('Task successfully added.', 2000, "success");
           this.dialogRef.close();
-        }
+        }, (error) => {
+          this.toastService.add('Something went wrong!', 2000, "error");
+        });
       }, (error) => {
-        this.toastService.add('Something went wrong!', 2000, "error");
+        this.toastService.add('Failed to fetch project!', 2000, "error");
       });
     } else {
-      this.taskService.updateTask(this.data.projectId, data).subscribe((res) => {
-        if (res) {
-          this.toastService.add('Task successfully added.', 2000, "success");
-          this.dialogRef.close();
+      console.log(this.data.id);
+
+      this.taskService.getProject(this.data.projectId).subscribe((project: any) => {
+        const taskIndex = project.tasks.findIndex((t: any) => t.id === this.data.id);
+        if (taskIndex !== -1) {
+          project.tasks[taskIndex] = { ...project.tasks[taskIndex], ...taskData };
+
+          this.taskService.updateProject(this.data.projectId, project).subscribe(() => {
+            this.toastService.add('Task successfully updated.', 2000, "success");
+            this.dialogRef.close();
+          }, (error) => {
+            this.toastService.add('Something went wrong!', 2000, "error");
+          });
+        } else {
+          this.toastService.add('Task not found!', 2000, "error");
         }
       }, (error) => {
-        this.toastService.add('Something went wrong!', 2000, "error");
+        this.toastService.add('Failed to fetch project!', 2000, "error");
       });
     }
   }

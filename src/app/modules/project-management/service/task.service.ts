@@ -13,6 +13,17 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
+  getProject(projectId: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}projects/${projectId}`);
+  }
+
+  updateProject(projectId: string, project: any): Observable<any> {
+    return this.http.put(
+      `${this.baseUrl}projects/${projectId}`,
+      project
+    );
+  }
+
   createTask(projectId: any, task: any) {
     return this.http.post(this.baseUrl + `projects/${projectId}/tasks`, task);
   }

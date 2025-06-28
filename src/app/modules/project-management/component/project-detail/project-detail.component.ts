@@ -63,6 +63,48 @@ export class ProjectDetailComponent {
     })
   }
 
+deleteTask(task: Task) {
+    this.taskService.getProject(this.projectId).subscribe(
+      (project: any) => {
+        if (project && project.tasks) {
+          // Remove the task from the tasks array
+          const updatedTasks = project.tasks.filter(
+            (t: any) => t.id !== task.id
+          );
+          project.tasks = updatedTasks;
+
+          // Update the project with the modified tasks array
+          this.taskService.updateProject(this.projectId, project).subscribe(
+            () => {
+              this.toastService.add(
+                'Task successfully deleted.',
+                2000,
+                'success'
+              );
+              this.getProject(); // Refresh the project data
+            },
+            (error) => {
+              this.toastService.add(
+                'Failed to update project after task deletion.',
+                2000,
+                'error'
+              );
+            }
+          );
+        } else {
+          this.toastService.add('Project or tasks not found!', 2000, 'error');
+        }
+      },
+      (error) => {
+        this.toastService.add(
+          'Failed to fetch project for deletion!',
+          2000,
+          'error'
+        );
+      }
+    );
+  }
+
   addTask(): void {
     const dialogRef = this.dialog.open(AddTaskComponent, {
       width: '600px',
@@ -74,21 +116,10 @@ export class ProjectDetailComponent {
   editTask(task: Task) {
     const ref = this.dialog.open(AddTaskComponent, {
       width: '600px',
-      data: { mode: 'edit', projectId: this.projectId, task }
+      data: { mode: 'edit', projectId: this.projectId,id:task.id, task }
     });
     ref.afterClosed().subscribe(() => this.getProject());
 
-  }
-
-  deleteTask(task: Task) {
-    this.taskService.deleteTask(this.projectId, task?.id).subscribe((res: Task) => {
-      if (res) {
-        this.toastService.add('Task successfully deleted.', 2000, "success");
-        this.getProject()
-      }
-    }, (error) => {
-      this.toastService.add('Something went wrong!', 2000, "error");
-    });
   }
 
   onFilterChanged(filtered: any[]): void {
